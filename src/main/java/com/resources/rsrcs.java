@@ -60,8 +60,31 @@ public class rsrcs {
         Guest.setFirstName(name);
         Guest.setAge(i);
         Guest.setId(id);
+
         return Response.ok(Guest.toString()).build();
     }
+
+    @PUT
+    @Path("/JSON/CH")
+//    @Produces("")
+    public Response putJS(@QueryParam("firstname") String name,@QueryParam("id") String id,@QueryParam("age") int i)
+    {
+        try {
+            if (name.equals("") || id.equals("") || i <= 0) {
+                throw new Exception();
+            }
+            else
+            {
+                return Response.ok("Checked params").build();
+            }
+        }
+        catch(Exception e)
+        {
+            return Response.status(400).entity("404, BAD PARAMS").build();
+        }
+
+    }
+
 
     @PUT
     @Path("/PASS")
