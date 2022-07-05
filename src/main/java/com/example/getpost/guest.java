@@ -5,6 +5,7 @@ public class guest {
     private String firstName;
     private String id;
     private int age;
+    private String password;
     public guest()
     {
         firstName = "";
@@ -30,15 +31,23 @@ public class guest {
     {
         age = a;
     }
-    String getFirstName()
+    public void setPassword(String s)
+    {
+        password = s;
+    }
+    public String getPassword()
+    {
+        return password;
+    }
+    public String getFirstName()
     {
         return firstName;
     }
-    String getId()
+    public String getId()
     {
         return id;
     }
-    int getAge()
+    public int getAge()
     {
         return age;
     }
